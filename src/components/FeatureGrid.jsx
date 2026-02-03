@@ -43,25 +43,25 @@ const FeatureGrid = () => {
     ];
 
     return (
-        <section className="py-16 md:py-20 bg-white">
+        <section className="py-12 md:py-16 lg:py-20 bg-white">
             <div className="container-custom">
                 {/* Section Header */}
-                <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                <div className="text-center mb-10 md:mb-12">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 md:mb-4">
                         What You Get
                     </h2>
-                    <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                    <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
                         Everything you need to take control of your finances.
                     </p>
                 </div>
 
                 {/* Feature Cards Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
                     {features.map((feature, index) => (
                         <Link
                             key={index}
                             to={feature.path}
-                            className="group p-6 bg-white border border-gray-200 rounded-xl hover:border-primary-500 hover:shadow-lg transition-all duration-300"
+                            className="group p-5 md:p-6 bg-white border border-gray-200 rounded-xl hover:border-primary-500 hover:shadow-lg transition-all duration-300 min-h-[140px] flex flex-col"
                         >
                             {/* Icon */}
                             <div className="flex items-center justify-center w-12 h-12 bg-primary-100 text-primary-600 rounded-lg mb-4 group-hover:bg-primary-500 group-hover:text-white transition-colors">

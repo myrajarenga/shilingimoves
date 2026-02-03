@@ -12,17 +12,17 @@ const Hero = () => {
     ];
 
     return (
-        <section className="bg-gradient-to-br from-white via-green-50/30 to-white pt-4 pb-8 md:pt-6 md:pb-12 overflow-hidden">
+        <section className="bg-gradient-to-br from-white via-green-50/30 to-white pt-6 pb-10 md:pt-8 md:pb-14 lg:pt-12 lg:pb-16 overflow-hidden">
             <div className="container-custom">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                     {/* Left Column - Copy */}
-                    <div className="space-y-5 relative z-10">
+                    <div className="space-y-5 md:space-y-6 relative z-10">
                         <div className="space-y-3">
-                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                            <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
                                 Take Control of Your Money. <br className="hidden lg:block" />
                                 <span className="text-primary-600">Build the Life You Want.</span>
                             </h1>
-                            <p className="text-lg text-gray-600 leading-relaxed max-w-xl">
+                            <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-xl">
                                 We've brought together the tools, education, and community you need to understand, plan, and grow your money. No more guesswork—just a clear path to financial security. Your command center is ready.
                             </p>
                         </div>
@@ -42,7 +42,7 @@ const Hero = () => {
                         </ul>
 
                         {/* CTAs */}
-                        <div className="flex flex-col sm:flex-row gap-4">
+                        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                             <Button variant="primary" size="lg" to="/signup">
                                 Create free account
                             </Button>
@@ -53,14 +53,14 @@ const Hero = () => {
                     </div>
 
                     {/* Right Column - Dashboard Mockup */}
-                    <div className="relative z-0">
+                    <div className="relative z-0 mt-8 lg:mt-0">
                         {/* Abstract background blob */}
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-green-400/10 rounded-full blur-3xl -z-10" />
 
                         <img
                             src={HeroDashboardImg}
                             alt="Shilingi Moves Dashboard App Interface showing savings and transactions"
-                            className="w-full h-auto max-h-[350px] md:max-h-[420px] lg:max-h-[480px] object-contain drop-shadow-2xl hover:scale-[1.02] transition-transform duration-500 ease-in-out"
+                            className="w-full h-auto max-h-[300px] sm:max-h-[380px] md:max-h-[420px] lg:max-h-[480px] object-contain drop-shadow-2xl hover:scale-[1.02] transition-transform duration-500 ease-in-out"
                             style={{ animation: 'float 6s ease-in-out infinite' }}
                         />
                     </div>

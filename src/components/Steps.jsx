@@ -24,14 +24,14 @@ const Steps = () => {
     ];
 
     return (
-        <section className="py-16 md:py-20 bg-gradient-to-br from-gray-50 to-white">
+        <section className="py-12 md:py-16 lg:py-20 bg-gradient-to-br from-gray-50 to-white">
             <div className="container-custom">
                 {/* Section Header */}
-                <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                <div className="text-center mb-10 md:mb-12">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 md:mb-4">
                         How It Works
                     </h2>
-                    <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                    <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
                         Get started in three simple steps.
                     </p>
                 </div>
@@ -44,12 +44,13 @@ const Steps = () => {
                     </div>
 
                     {/* Steps Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
                         {steps.map((step, index) => (
                             <div key={index} className="relative flex flex-col items-center text-center">
                                 {/* Step Number Circle */}
-                                <div className="relative z-10 flex items-center justify-center w-20 h-20 bg-primary-500 text-white rounded-full shadow-lg mb-4">
-                                    <step.icon size={32} strokeWidth={2} />
+                                <div className="relative z-10 flex items-center justify-center w-16 h-16 md:w-20 md:h-20 bg-primary-500 text-white rounded-full shadow-lg mb-4">
+                                    <step.icon size={28} className="md:hidden" strokeWidth={2} />
+                                    <step.icon size={32} className="hidden md:block" strokeWidth={2} />
                                 </div>
 
                                 {/* Step Number Badge */}
@@ -58,7 +59,7 @@ const Steps = () => {
                                 </div>
 
                                 {/* Content */}
-                                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                                <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2">
                                     {step.title}
                                 </h3>
                                 <p className="text-sm text-gray-600">

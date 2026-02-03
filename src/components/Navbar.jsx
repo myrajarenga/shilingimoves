@@ -20,7 +20,7 @@ const Navbar = () => {
     return (
         <nav className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
             <div className="container-custom">
-                <div className="flex items-center justify-between h-16 md:h-20">
+                <div className="flex items-center justify-between h-16 md:h-18 lg:h-20">
                     {/* Logo */}
                     <Link to="/" className="flex items-center space-x-2">
                         <div className="flex items-center justify-center w-10 h-10 bg-primary-500 rounded-lg text-white font-bold text-sm">
@@ -38,8 +38,8 @@ const Navbar = () => {
                                 key={link.path}
                                 to={link.path}
                                 className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${isActive(link.path)
-                                        ? 'text-primary-600 bg-primary-50'
-                                        : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
+                                    ? 'text-primary-600 bg-primary-50'
+                                    : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
                                     }`}
                             >
                                 {link.name}
@@ -49,10 +49,10 @@ const Navbar = () => {
 
                     {/* Auth Buttons */}
                     <div className="hidden md:flex items-center space-x-3">
-                        <Button variant="ghost" to="/signin" size="sm">
+                        <Button variant="ghost" to="/signin" size="sm" className="min-h-[40px]">
                             Sign In
                         </Button>
-                        <Button variant="primary" to="/signup" size="sm">
+                        <Button variant="primary" to="/signup" size="sm" className="min-h-[40px]">
                             Free Sign Up
                         </Button>
                     </div>
@@ -60,7 +60,7 @@ const Navbar = () => {
                     {/* Mobile Menu Button */}
                     <button
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                        className="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100"
+                        className="md:hidden p-2.5 rounded-md text-gray-700 hover:bg-gray-100 min-h-[44px] min-w-[44px] flex items-center justify-center"
                     >
                         {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>
@@ -70,25 +70,25 @@ const Navbar = () => {
             {/* Mobile Menu */}
             {mobileMenuOpen && (
                 <div className="md:hidden border-t border-gray-200 bg-white">
-                    <div className="container-custom py-4 space-y-2">
+                    <div className="container-custom py-4 space-y-1">
                         {navLinks.map((link) => (
                             <Link
                                 key={link.path}
                                 to={link.path}
                                 onClick={() => setMobileMenuOpen(false)}
-                                className={`block px-4 py-2 rounded-md text-sm font-medium ${isActive(link.path)
-                                        ? 'text-primary-600 bg-primary-50'
-                                        : 'text-gray-700 hover:bg-gray-50'
+                                className={`block px-4 py-3 rounded-md text-base font-medium min-h-[44px] flex items-center ${isActive(link.path)
+                                    ? 'text-primary-600 bg-primary-50'
+                                    : 'text-gray-700 hover:bg-gray-50'
                                     }`}
                             >
                                 {link.name}
                             </Link>
                         ))}
                         <div className="pt-4 space-y-2">
-                            <Button variant="ghost" to="/signin" size="sm" className="w-full">
+                            <Button variant="ghost" to="/signin" size="sm" className="w-full min-h-[48px]">
                                 Sign In
                             </Button>
-                            <Button variant="primary" to="/signup" size="sm" className="w-full">
+                            <Button variant="primary" to="/signup" size="sm" className="w-full min-h-[48px]">
                                 Free Sign Up
                             </Button>
                         </div>

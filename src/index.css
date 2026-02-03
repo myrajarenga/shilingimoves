@@ -6,10 +6,28 @@
   body {
     @apply font-sans antialiased text-gray-900 bg-white;
   }
+
+  /* Ensure proper touch scrolling on iOS */
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
 }
 
 @layer components {
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Touch-friendly button minimum sizes */
+  .btn-touch {
+    @apply min-h-[44px] min-w-[44px];
+  }
+}
+
+@layer utilities {
+
+  /* Prevent text from being too small on mobile */
+  .text-responsive {
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
   }
 }

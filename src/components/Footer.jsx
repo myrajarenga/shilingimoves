@@ -36,11 +36,11 @@ const Footer = () => {
     ];
 
     return (
-        <footer className="bg-gray-50 text-gray-800 pt-16 border-t border-gray-100">
+        <footer className="bg-gray-50 text-gray-800 pt-12 md:pt-16 border-t border-gray-100">
             <div className="container-custom">
-                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-12 items-start">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-10 mb-12 items-start">
                     {/* Brand */}
-                    <div className="lg:col-span-1 space-y-6">
+                    <div className="lg:col-span-1 space-y-4 md:space-y-6">
                         <div className="flex items-center space-x-2">
                             <div className="flex items-center justify-center w-10 h-10 bg-primary-500 rounded-lg text-white font-bold text-sm">
                                 LOGO
@@ -49,18 +49,18 @@ const Footer = () => {
                                 Shilingi<br />Moves
                             </span>
                         </div>
-                        <p className="text-gray-600">
+                        <p className="text-sm md:text-base text-gray-600">
                             Learn. Plan. Grow
                         </p>
                     </div>
 
                     {/* Company */}
                     <div>
-                        <h3 className="text-gray-900 font-bold text-lg mb-4">Company</h3>
-                        <ul className="space-y-3">
+                        <h3 className="text-gray-900 font-bold text-base md:text-lg mb-4">Company</h3>
+                        <ul className="space-y-2.5 md:space-y-3">
                             {companyLinks.map((link) => (
                                 <li key={link.name}>
-                                    <Link to={link.path} className="text-gray-600 hover:text-primary-600 transition-colors">
+                                    <Link to={link.path} className="text-sm md:text-base text-gray-600 hover:text-primary-600 transition-colors inline-block py-1">
                                         {link.name}
                                     </Link>
                                 </li>
@@ -70,11 +70,11 @@ const Footer = () => {
 
                     {/* Services */}
                     <div>
-                        <h3 className="text-gray-900 font-bold text-lg mb-4">Services</h3>
-                        <ul className="space-y-3">
+                        <h3 className="text-gray-900 font-bold text-base md:text-lg mb-4">Services</h3>
+                        <ul className="space-y-2.5 md:space-y-3">
                             {servicesLinks.map((link) => (
                                 <li key={link.name}>
-                                    <Link to={link.path} className="text-gray-600 hover:text-primary-600 transition-colors">
+                                    <Link to={link.path} className="text-sm md:text-base text-gray-600 hover:text-primary-600 transition-colors inline-block py-1">
                                         {link.name}
                                     </Link>
                                 </li>
@@ -84,11 +84,11 @@ const Footer = () => {
 
                     {/* Discover More */}
                     <div>
-                        <h3 className="text-gray-900 font-bold text-lg mb-4">Discover More</h3>
-                        <ul className="space-y-3">
+                        <h3 className="text-gray-900 font-bold text-base md:text-lg mb-4">Discover More</h3>
+                        <ul className="space-y-2.5 md:space-y-3">
                             {discoverLinks.map((link) => (
                                 <li key={link.name}>
-                                    <Link to={link.path} className="text-gray-600 hover:text-primary-600 transition-colors">
+                                    <Link to={link.path} className="text-sm md:text-base text-gray-600 hover:text-primary-600 transition-colors inline-block py-1">
                                         {link.name}
                                     </Link>
                                 </li>
@@ -98,8 +98,8 @@ const Footer = () => {
 
                     {/* Contact Us */}
                     <div>
-                        <h3 className="text-gray-900 font-bold text-lg mb-4">Contact Us</h3>
-                        <div className="space-y-4 text-gray-600">
+                        <h3 className="text-gray-900 font-bold text-base md:text-lg mb-4">Contact Us</h3>
+                        <div className="space-y-3 md:space-y-4 text-sm md:text-base text-gray-600">
                             <p>
                                 <span className="font-bold text-gray-900">Call us at:</span><br />
                                 +254 700 000 000
@@ -115,12 +115,12 @@ const Footer = () => {
                         </div>
 
                         {/* Social Icons */}
-                        <div className="flex items-center space-x-4 mt-6">
-                            <a href="#" className="text-gray-900 hover:text-primary-600 transition-colors"><Facebook size={20} /></a>
+                        <div className="flex items-center gap-4 mt-6 flex-wrap">
+                            <a href="#" className="text-gray-900 hover:text-primary-600 transition-colors p-2 hover:bg-gray-100 rounded-lg min-h-[44px] min-w-[44px] flex items-center justify-center"><Facebook size={20} /></a>
                             {/* WhatsApp placeholder icon - using MessageCircle as proxy or just generic */}
-                            <a href="#" className="text-gray-900 hover:text-primary-600 transition-colors"><Phone size={20} /></a>
-                            <a href="#" className="text-gray-900 hover:text-primary-600 transition-colors"><Twitter size={20} /></a>
-                            <a href="#" className="text-gray-900 hover:text-primary-600 transition-colors"><Instagram size={20} /></a>
+                            <a href="#" className="text-gray-900 hover:text-primary-600 transition-colors p-2 hover:bg-gray-100 rounded-lg min-h-[44px] min-w-[44px] flex items-center justify-center"><Phone size={20} /></a>
+                            <a href="#" className="text-gray-900 hover:text-primary-600 transition-colors p-2 hover:bg-gray-100 rounded-lg min-h-[44px] min-w-[44px] flex items-center justify-center"><Twitter size={20} /></a>
+                            <a href="#" className="text-gray-900 hover:text-primary-600 transition-colors p-2 hover:bg-gray-100 rounded-lg min-h-[44px] min-w-[44px] flex items-center justify-center"><Instagram size={20} /></a>
                             {/* TikTok placeholder icon - no generic Lucide match, skipping or using a generic one */}
                         </div>
                     </div>
