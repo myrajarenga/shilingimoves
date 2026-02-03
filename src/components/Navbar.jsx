@@ -1,0 +1,102 @@
+import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
+import Button from './Button';
+
+const Navbar = () => {
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const location = useLocation();
+
+    const navLinks = [
+        { name: 'Home', path: '/' },
+        { name: 'Dashboard', path: '/dashboard' },
+        { name: 'Learn', path: '/learn' },
+        { name: 'Compare', path: '/compare' },
+        { name: 'Tools', path: '/tools' },
+    ];
+
+    const isActive = (path) => location.pathname === path;
+
+    return (
+        <nav className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+            <div className="container-custom">
+                <div className="flex items-center justify-between h-16 md:h-20">
+                    {/* Logo */}
+                    <Link to="/" className="flex items-center space-x-2">
+                        <div className="flex items-center justify-center w-10 h-10 bg-primary-500 rounded-lg text-white font-bold text-sm">
+                            LOGO
+                        </div>
+                        <span className="text-xl font-bold text-gray-900 hidden sm:block">
+                            Shilingi Moves
+                        </span>
+                    </Link>
+
+                    {/* Desktop Navigation */}
+                    <div className="hidden md:flex items-center space-x-1">
+                        {navLinks.map((link) => (
+                            <Link
+                                key={link.path}
+                                to={link.path}
+                                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${isActive(link.path)
+                                        ? 'text-primary-600 bg-primary-50'
+                                        : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
+                                    }`}
+                            >
+                                {link.name}
+                            </Link>
+                        ))}
+                    </div>
+
+                    {/* Auth Buttons */}
+                    <div className="hidden md:flex items-center space-x-3">
+                        <Button variant="ghost" to="/signin" size="sm">
+                            Sign In
+                        </Button>
+                        <Button variant="primary" to="/signup" size="sm">
+                            Free Sign Up
+                        </Button>
+                    </div>
+
+                    {/* Mobile Menu Button */}
+                    <button
+                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                        className="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100"
+                    >
+                        {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                    </button>
+                </div>
+            </div>
+
+            {/* Mobile Menu */}
+            {mobileMenuOpen && (
+                <div className="md:hidden border-t border-gray-200 bg-white">
+                    <div className="container-custom py-4 space-y-2">
+                        {navLinks.map((link) => (
+                            <Link
+                                key={link.path}
+                                to={link.path}
+                                onClick={() => setMobileMenuOpen(false)}
+                                className={`block px-4 py-2 rounded-md text-sm font-medium ${isActive(link.path)
+                                        ? 'text-primary-600 bg-primary-50'
+                                        : 'text-gray-700 hover:bg-gray-50'
+                                    }`}
+                            >
+                                {link.name}
+                            </Link>
+                        ))}
+                        <div className="pt-4 space-y-2">
+                            <Button variant="ghost" to="/signin" size="sm" className="w-full">
+                                Sign In
+                            </Button>
+                            <Button variant="primary" to="/signup" size="sm" className="w-full">
+                                Free Sign Up
+                            </Button>
+                        </div>
+                    </div>
+                </div>
+            )}
+        </nav>
+    );
+};
+
+export default Navbar;
